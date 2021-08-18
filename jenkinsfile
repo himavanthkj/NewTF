@@ -1,0 +1,13 @@
+pipeline {
+
+   agent  any
+    stages {
+        stage('TF_steps') {
+            steps {
+                    sh 'terraform init'
+                    sh 'terraform plan'
+                    sh 'terraform apply --auto-approve'
+            }
+        }
+    }
+}
