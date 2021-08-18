@@ -1,5 +1,5 @@
 variable "aws_region" {
-    deafult = "us-east-1"
+    default = "us-east-1"
 }
 
 variable "vpc_cidr" {
@@ -7,13 +7,13 @@ variable "vpc_cidr" {
 }
 
 variable "subnets_cidr" {
-    type = "list"
-    default = ["10.20.1.0","10.20.2.0"]
+    type = list(string)
+    default = ["10.20.1.0", "10.20.2.0"]
 }
 
 variable "az" {
-    type = "list"
-    default = ["ap-south-1a","ap-south-1b"]
+    type = list(string)
+    default = ["ap-south-1a", "ap-south-1b"]
 }
 
 variable "ami_id" {
@@ -24,7 +24,7 @@ variable "instance_type" {
     default = "t2.micro"
 }
 
-variable "number-instances" {
+variable "number_instances" {
     default = "1"
 }
 
