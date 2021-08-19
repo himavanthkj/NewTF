@@ -29,5 +29,5 @@ variable "number_instances" {
 }
 
 variable "key" {
-    default = "hima_sample"
+    default = "AWSLearning"
 }
