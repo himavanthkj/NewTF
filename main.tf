@@ -77,3 +77,7 @@ resource "aws_security_group" "webservers_sg" {
       "Name" = "Server-${count.index}"
     }
   }
+backend "s3" {
+    bucket  =   "himatfbackend"
+    region  =   "us-east-1"
+}
