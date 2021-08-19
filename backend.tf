@@ -1,6 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "himatfbackend"
-    region = "us-east-1"
+    key    = terraform.state
+    region = "us-west-2"
   }
 }
