@@ -46,7 +46,7 @@ resource "aws_route_table_association" "namea" {
   route_table_id = aws_route_table.public_rt.id
 }
 
-resource "aws_security_group" "webservers" {
+resource "aws_security_group" "webservers_sg" {
   name = "allow httpd"
   description = "Allow httpd inbound traffic"
   vpc_id = aws_vpc.my_vpc.id
