@@ -65,7 +65,8 @@ resource "aws_security_group" "webservers_sg" {
   }
 
   resource "aws_instance" "webservers" {
-    count   = var.number_instances
+    #count   = var.number_instances
+    count = 4
     ami = var.ami_id
     instance_type = var.instance_type
 
