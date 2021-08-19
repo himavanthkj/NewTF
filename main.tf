@@ -69,7 +69,7 @@ resource "aws_security_group" "webservers" {
     ami = var.ami_id
     instance_type = var.instance_type
 
-    security_groups = ["aws_security_group.webservers.id"]
+    security_groups = aws_security_group.webservers.id
     subnet_id = element(aws_subnet.public_subnet.*.id,count.index)
     key_name = var.key
     tags = {
