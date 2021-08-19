@@ -25,7 +25,7 @@ variable "instance_type" {
 }
 
 variable "number_instances" {
-    default = "1"
+    default = "2"
 }
 
 variable "key" {
