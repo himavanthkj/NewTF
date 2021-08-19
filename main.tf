@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_vpc" "my_vpc" {
     cidr_block = var.vpc_cidr
     tags    =   {
-        name    = "my_vpc"
+        name    = "myvpc"
     }
 }
 
@@ -54,7 +54,7 @@ resource "aws_security_group" "webservers_sg" {
       from_port = 80
       to_port = 80
       protocol = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
+      cidr_blocks = [aws_vpc.my_vpc.cidr_block]
   }
   egress {
       from_port = 0
