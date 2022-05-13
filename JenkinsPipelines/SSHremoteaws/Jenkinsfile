@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    // environment {
+    // Creates variables KEY=/temp/path/to/key, KEY_USR=joe
+    //KEY = credentials('ssh-key')
+   //  }
+    stages {
+        stage('Hello') {
+            steps {
+                sshagent(credentials : ["server-1"]) {
+                // sh "echo pwd"
+                sh """
+                ssh -t -t ec2-user@3.80.43.131 -o StrictHostKeyChecking=no << EOF
+                pwd
+                ls -lthr
+                exit 0
+                << EOF
+                """
+}
+            }
+        }
+    }
+}
