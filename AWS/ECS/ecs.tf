@@ -1,5 +1,5 @@
 data "template_file" "template_file_hima" {
-  template = file("./templates/ecs/hima.json.tpl")
+  template = file("./templates/hima.json.tpl")
   vars = {
     docker_registry       = var.docker_registry
     app_name              = var.app_name
