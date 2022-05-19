@@ -18,7 +18,7 @@ data "template_file" "template_file_hima" {
 }
 module "ecs-fargate" {
   #source = "git::ssh://git@himavanth.git"
-  source = "cn-terraform/ecs-fargate/aws"
+  source = "../modules/ECS"
   cloudwatch_loggroup_name = var.app_name
   container_definitions = data.template_file.template_file_hima.rendered
   deployment_minimum_healthy_percent = 50
